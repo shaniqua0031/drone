@@ -28,16 +28,9 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mockServices.map((service) => (
-              <ServiceCard 
-                key={service.id} 
+              <ServiceCard
+                key={service.id}
                 service={service}
-                onRequest={() => {
-                  // Navigate to contact form with service pre-selected
-                  if (typeof window !== 'undefined') {
-                    localStorage.setItem('selectedService', service.name)
-                    window.location.href = '/contact'
-                  }
-                }}
               />
             ))}
           </div>

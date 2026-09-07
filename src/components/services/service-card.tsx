@@ -1,12 +1,18 @@
 'use client'
 
-import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Service } from '@/types'
-import { ArrowRight } from 'lucide-react'
-import * as Icons from 'lucide-react'
+import {
+  ArrowRight, Leaf, MapPin, Heart, Droplets, AlertCircle,
+  BarChart3, Ruler, Eye, Camera, Sprout, Zap
+} from 'lucide-react'
+
+const ICON_MAP: Record<string, React.ElementType> = {
+  Leaf, MapPin, Heart, Droplets, AlertCircle,
+  BarChart3, Ruler, Eye, Camera, Sprout, Zap
+}
 
 export interface ServiceCardProps {
   service: Service
@@ -15,7 +21,16 @@ export interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, onLearnMore, onRequest }: ServiceCardProps) {
-  const IconComponent = Icons[service.icon as keyof typeof Icons] || Icons.Zap
+  const IconComponent = ICON_MAP[service.icon] || ICON_MAP.Zap
+
+  const handleRequest = () => {
+    if (onRequest) {
+      onRequest(service)
+    } else {
+      localStorage.setItem('selectedService', service.name)
+      window.location.href = '/contact'
+    }
+  }
 
   return (
     <Card className="h-full hover:shadow-lg transition-shadow">
@@ -62,15 +77,13 @@ export function ServiceCard({ service, onLearnMore, onRequest }: ServiceCardProp
               <ArrowRight className="h-4 w-4" />
             </button>
           )}
-          {onRequest && (
-            <Button
-              size="sm"
-              className="flex-1"
-              onClick={() => onRequest(service)}
-            >
-              Request Service
-            </Button>
-          )}
+          <Button
+            size="sm"
+            className="flex-1"
+            onClick={handleRequest}
+          >
+            Request Service
+          </Button>
         </div>
       </CardContent>
     </Card>

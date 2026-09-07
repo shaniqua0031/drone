@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { mockFarms } from '@/data/mock-farms'
-import { formatDate, getHealthStatusLabel } from '@/lib/utils'
+import { formatDate } from '@/lib/utils'
 import { Plus, Edit, Trash2, Eye } from 'lucide-react'
 
 export default function FarmsPage() {

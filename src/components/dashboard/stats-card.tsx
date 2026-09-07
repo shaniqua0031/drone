@@ -1,6 +1,6 @@
 'use client'
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ArrowUp, ArrowDown, Minus } from 'lucide-react'
 
 export interface StatCardProps {
@@ -14,7 +14,6 @@ export interface StatCardProps {
 
 export function StatCard({ title, value, description, trend, icon, variant = 'default' }: StatCardProps) {
   const getVariantStyles = () => {
-    const baseIcon = 'h-5 w-5'
     switch (variant) {
       case 'success':
         return { icon: 'text-green-500', bg: 'bg-green-100 dark:bg-green-900' }

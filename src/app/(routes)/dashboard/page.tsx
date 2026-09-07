@@ -9,15 +9,14 @@ import { mockFarms } from '@/data/mock-farms'
 import { mockReports } from '@/data/mock-reports'
 import { mockDroneFlights } from '@/data/mock-drones'
 import { DASHBOARD_STATS_MOCK, WEATHER_MOCK } from '@/data/constants'
-import { formatDate, getHealthStatusColor, getHealthStatusLabel } from '@/lib/utils'
+import { formatDate } from '@/lib/utils'
 import { Leaf, Map, BarChart3, Cloud, Droplets, Wind, Eye, Download, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area, BarChart, Bar } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area } from 'recharts'
 
 export default function DashboardPage() {
   const [selectedFarm, setSelectedFarm] = useState<string | null>(null)
   
-  const selectedFarmData = selectedFarm ? mockFarms.find((f) => f.id === selectedFarm) : mockFarms[0]
 
   // Mock data for charts
   const healthTrendData = [

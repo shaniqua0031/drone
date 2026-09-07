@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { mockReports } from '@/data/mock-reports'
-import { formatDate, getHealthStatusColor } from '@/lib/utils'
+import { formatDate } from '@/lib/utils'
 import { Download, Eye, Search } from 'lucide-react'
 
 export default function ReportsPage() {

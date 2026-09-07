@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ServiceCard } from '@/components/services/service-card'
 import { StatCard } from '@/components/dashboard/stats-card'
-import { Leaf, Map, BarChart3, Droplets, AlertCircle, Eye, Camera, Sprout, TrendingUp, CheckCircle } from 'lucide-react'
+import { Leaf, Map, BarChart3, Eye, TrendingUp, CheckCircle } from 'lucide-react'
 import { mockServices } from '@/data/mock-services'
 import { DASHBOARD_STATS_MOCK } from '@/data/constants'
 
